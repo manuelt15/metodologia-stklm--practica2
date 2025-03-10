@@ -1,0 +1,453 @@
+:root {
+    font-size : 100%;
+    font-family : system-ui, sans-serif;
+    scroll-behavior : smooth;
+  }
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  *::before , *::after {
+    display : block;
+  }
+  img , picture , video , iframe , figure , canvas {
+    max-width : 100%;
+    display : block;
+    width : 100%;
+    object-fit : cover;
+    object-position : center center;
+  }
+  a {
+    display : block;
+    text-decoration : none;
+    color : inherit;
+    font :  inherit;
+  }
+  p a {
+    display : inline;
+  }
+  li , menu, summary {
+    list-style-type : none;
+  }
+  ol {
+    counter-reset : revert;
+  }
+  h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+    font :  inherit;
+    text-decoration :  none;
+    color : inherit;
+    overflow-wrap : break-word;
+    text-wrap : pretty;
+  }
+  mark {
+    background-color : transparent;
+  }
+  blockquote::before , blockquote::after , q::before , q::after {
+    content : none;
+  }
+  form , input , textarea , select , button , label {
+    font :  inherit;
+    hyphens : auto;
+    background-color : transparent;
+    color : inherit;
+    display : block;
+  }
+  fieldset {
+    border : none;
+  }
+  ::placeholder {
+    color : unset;
+  }
+  button {
+    all : unset;
+    cursor : pointer;
+  }
+  table , tr , td , th , tbody , thead , tfoot {
+    border-collapse : collapse;
+    border-spacing : 0;
+    font : inherit;
+  }
+  svg {
+    width : 100%;
+    display : block;
+    fill : currentColor;
+  }
+  body {
+    min-height : 100vh;
+    color : inherit;
+    hyphens : auto;
+    font-smooth : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    
+  }
+
+.Header{
+    /* background-color: blueviolet; */
+    width: 100%;
+    min-height: 2vh;
+    padding: 0 1rem;
+    margin: .5rem 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header .Picture-logo{
+    width: 4rem;
+}
+/* .Header .Nav-header{
+    background-color: red; 
+} */
+.Header .Header-ul{
+    width: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+
+    gap: 1.5rem;
+    font-size: .9rem;
+    font-family: serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* .Header .Header-li{} */
+.Header .Header-a--colored{
+  color: rgb(126, 165, 126);
+}
+/* .Header .Header-a{} */
+.Header .Header-menu{
+    width: auto;
+}
+.main{
+  margin: .5rem 0;
+  position: relative;
+  overflow: hidden;
+
+}
+.Header-left{
+  background-color: white;
+  width: 30%;
+  min-height: 90vh;
+  padding: 2rem;
+  gap: 1rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+
+  transform: translateX(100%);
+  opacity: 1;
+  pointer-events: none;
+  transition: all 1.3s ease;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.Header-left.isActive{
+  background-color: white;
+  width: 30%;
+  min-height: 90vh;
+  padding: 3rem;
+  gap: 2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+  transition: all 1.3s ease;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.Header-left .logo-left{
+  width: 8rem;
+}
+.Header-left .p-left{
+  width: 100%;
+
+  font-family: serif;
+  font-size: .9rem;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: lightgray;
+}
+.Header-left .chica-left{
+  width: 50%;
+}
+.Header-left .social-left{
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main .Main-wrapper{
+  width: 100%;
+  gap: .2rem;
+  padding: 0 1rem;
+
+
+  display: grid;
+  grid-template-columns: repeat(6 , 1fr);
+}
+.Main-wrapper .Picture-main--1{
+ /* overflow: hidden; para que funcione hay que colocar la img dentro de una etiqueta. EJ: <picture> --> img y asi lograr el mismo efecto de la pagina */
+ transition: all 1s ease;
+ transform: scale(1);
+}
+
+.Picture-main--1:hover{
+  transform: translateY(-5%);
+
+}
+.Main-wrapper .Picture-main--2{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--2:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--3{
+  grid-row: span 2;
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--3:hover{
+  transform: translateY(-2%);
+}
+.Main-wrapper .Picture-main--4{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--4:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--5{
+  grid-row: span 2;
+  grid-column: span 2;
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--5:hover{
+  transform: translateY(-2%);
+}
+.Main-wrapper .Picture-main--6{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--6:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--7{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--7:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--8{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--8:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--9{
+  grid-column: span 2;
+  grid-row: span 2;
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--9:hover{
+  transform: translateY(-2%);
+}
+.Main-wrapper .Picture-main--10{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--10:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--11{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--11:hover{
+ transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--12{
+  grid-row: span 2;
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--12:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--13{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--13:hover{
+  transform: translateY(-2%);
+}
+.Main-wrapper .Picture-main--14{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--14:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--15{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--15:hover{
+ transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--16{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--16:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--17{
+  grid-column: span 2;
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--17:hover{
+  transform: translateY(-5%);
+}
+.Main-wrapper .Picture-main--18{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Main-wrapper .Picture-main--19{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Main-wrapper .Picture-main--20{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Main-wrapper .Picture-main--21{
+  transition: all 1s ease;
+  transform: scale(1);
+}
+.Picture-main--18:hover{
+  transform: translateY(-5%);
+}
+.Picture-main--19:hover{
+  transform: translateY(-5%);
+}
+.Picture-main--20:hover{
+  transform: translateY(-5%);
+}
+.Picture-main--21:hover{
+  transform: translateY(-5%);
+}
+
+.Footer{
+  width: 100%;
+  max-width: 1200px;
+  min-height: 20vh;
+  margin: 3rem auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.Footer-wrapper{
+  width: 100%;
+  max-width: 1200px;
+  gap: .8rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.Footer-wrapper .Footer-logo{
+  width: 6rem;
+}
+.Footer-wrapper .Footer-p{
+  width: 25%;
+
+  font-family: serif;
+  font-size: .8rem;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: lightgray;
+}
+.Footer-social{
+  width: calc( 100% / 3 );
+  gap: 1rem;
+  margin: 1rem 0;
+
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.Footer-2021{
+  margin: 4rem 0 0 0;
+  font-size: .9rem;
+  color: lightgray;
+
+  font-family:"M PLUS 1 Code";
+  font-weight: 400;
+  font-style: normal;
+
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media(max-width:800px){
+  .main .Main-wrapper{
+    grid-template-columns: repeat( 4 , 1fr );
+  }
+}
+@media(max-width:600px){
+  .Header .Header-li{
+    display: none;
+  }
+  .main .Main-wrapper{
+    grid-template-columns: repeat( 2 , 1fr );
+  }
+}
+@media(max-width:300px){
+  .main .Main-wrapper{
+    grid-template-columns: 1fr;
+  }
+  .Footer-wrapper .Footer-p{
+    width: 50%;
+    font-size: .5rem;
+  }
+  .Footer-2021{
+    font-size: .5rem;
+  }
+}
